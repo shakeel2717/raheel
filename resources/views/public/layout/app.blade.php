@@ -118,7 +118,7 @@
                                         </div>
                                     </li>
                                     <li class="header-get-a-quote">
-                                        <a class="btn btn-primary" href="contact.html">Create Account</a>
+                                        <a class="btn btn-primary" href="{{ route('register') }}">Create Account</a>
                                     </li>
                                 </ul><!-- Ul end -->
                             </div><!-- header right end -->
