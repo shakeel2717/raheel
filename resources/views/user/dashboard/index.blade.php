@@ -17,25 +17,29 @@
                     <div class="gap-20"></div>
 
                     <div class="row">
-
-                        <div class="col-lg-4 col-md-6 mb-5">
-                            <div class="ts-service-box">
-                                <div class="ts-service-image-wrapper">
-                                    <img loading="lazy" class="w-100" src="/assets/images/services/service1.jpg"
-                                        alt="service-image">
-                                </div>
-                                <div class="">
-                                    <div class="ts-service-info">
-                                        <h3 class="service-box-title"><a href="service-single.html">Zero Harm Everyday</a>
-                                        </h3>
-                                        <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking
-                                            team looking for talent like. Lorem ipsum dolor suscipit.</p>
-                                        <a class="learn-more d-inline-block" href="service-single.html"
-                                            aria-label="service-details"><i class="fa fa-caret-right"></i> Learn more</a>
+                        @forelse ($departments as $department)
+                            <div class="col-lg-4 col-md-6 mb-5">
+                                <div class="ts-service-box">
+                                    <div class="ts-service-image-wrapper">
+                                        <img loading="lazy" class="w-100"
+                                            src="/assets/images/services/service1.jpg" alt="service-image">
+                                    </div>
+                                    <div class="">
+                                        <div class="ts-service-info">
+                                            <h3 class="service-box-title"><a
+                                                    href="{{ route('department.show', ['department' => $department->id]) }}">{{ $department->name }}</a>
+                                            </h3>
+                                            <p>{{ $department->description }}</p>
+                                            <a class="learn-more d-inline-block"
+                                                href="{{ route('department.show', ['department' => $department->id]) }}"
+                                                aria-label="service-details"><i class="fa fa-caret-right"></i> Edit</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div><!-- Service1 end -->
-                        </div><!-- Col 1 end -->
+                            </div>
+                        @empty
+                            <h2>No Department Found</h2>
+                        @endforelse
 
                     </div>
 
