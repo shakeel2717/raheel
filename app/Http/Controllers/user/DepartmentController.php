@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\user\Department;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -14,7 +15,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $departments = Department::get();
+        return view('user.dashboard.index', compact('departments'));
     }
 
     /**
@@ -57,7 +59,8 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $department = Department::find($id);
+        return view('user.dashboard.department.edit', compact('department'));
     }
 
     /**
@@ -69,7 +72,17 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required|max:255',
+        ]);
+
+        $department = Department::find($id);
+        $department->name = $request->name;
+        $department->description = $request->description;
+        $department->save();
+
+        return redirect()->back()->with('status', 'Department updated successfully');
     }
 
     /**

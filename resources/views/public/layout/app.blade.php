@@ -144,6 +144,7 @@
                                         <li class="nav-item"><a class="nav-link" href="{{ route('index') }}">Home</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Sign In</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Create Account</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('dashboard.index') }}">Dashboard</a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -289,7 +290,8 @@
         <!-- Template custom -->
         <script src="/assets/js/script.js"></script>
 
-    </div><!-- Body inner end -->
+        <x-alert />
+    </div>
 </body>
 
 </html>
