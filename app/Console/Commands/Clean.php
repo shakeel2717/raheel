@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Option;
 use App\Models\User;
 use App\Models\user\Counter;
 use App\Models\user\Department;
@@ -105,6 +106,12 @@ class Clean extends Command
         $user->save();
 
 
+        // website options
+
+        $option = new Option();
+        $option->name = 'token_length';
+        $option->value = 0;
+        $option->save();
 
         return 0;
     }

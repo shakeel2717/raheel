@@ -54,6 +54,25 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-lg-4 col-md-6 mb-5">
+                            <div class="ts-service-box">
+                                <div class="ts-service-image-wrapper">
+                                    <img loading="lazy" class="w-100" src="/assets/images/services/service1.jpg"
+                                        alt="service-image">
+                                </div>
+                                <div class="">
+                                    <div class="ts-service-info">
+                                        <h3 class="service-box-title"><a
+                                                href="{{ route('token.index') }}">Token</a>
+                                        </h3>
+                                        <p>Token Mangement</p>
+                                        <a class="learn-more d-inline-block" href="{{ route('token.index') }}"
+                                            aria-label="service-details"><i class="fa fa-caret-right"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
